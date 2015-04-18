@@ -47,7 +47,7 @@ module Renoise
       end
     end
 
-    def seq_stop
+    def seq_pause
       @sequencer[:play] = false
       @sequencer[:played].each do |n|
         note_off(n[1], n[2], n[3])
@@ -55,8 +55,8 @@ module Renoise
       end
     end
 
-    def seq_reset
-      seq_stop
+    def seq_stop
+      seq_pause
       @sequencer[:position] = 0
     end
 
