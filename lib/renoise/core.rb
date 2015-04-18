@@ -16,6 +16,10 @@ module Renoise
       @bpm = bpm
     end
 
+    def panic
+      send_msg "/renoise/transport/panic"
+    end
+
     def note_on(instr, track, note, val)
       send_msg "/renoise/trigger/note_on", instr, track, note, val
     end

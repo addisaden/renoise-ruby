@@ -37,12 +37,12 @@ module Renoise
               note_on(n[0], n[1], n[2], n[3])
               @sequencer[:played] << [n[4], n[0], n[1], n[2]]
             end
+
+            @sequencer[:position] += 1
           end
 
           # wait a tick
           sleep (60.0 / (@bpm * 4))
-
-          @sequencer[:position] += 1
         end
       end
     end
@@ -57,6 +57,7 @@ module Renoise
 
     def seq_stop
       seq_pause
+      panic
       @sequencer[:position] = 0
     end
 
