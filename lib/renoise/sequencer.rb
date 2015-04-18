@@ -13,7 +13,7 @@ module Renoise
           # stop notes
           @sequencer[:played].each_index do |i|
             n = @sequencer[:played][i]
-            if n[0] == @sequencer[:position] then
+            if n[0] <= @sequencer[:position] then
               note_off(n[1], n[2], n[3])
               @sequencer[:played].delete_at(i)
             end
