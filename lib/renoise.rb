@@ -1,5 +1,5 @@
 require "renoise/version"
+require "renoise/core"
 
 module Renoise
-  # Your code goes here...
 end

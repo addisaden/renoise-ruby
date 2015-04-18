@@ -1,0 +1,6 @@
+#!/bin/env ruby
+
+require "renoise"
+require "renoise/repl"
+
+Renoise::Repl.new
