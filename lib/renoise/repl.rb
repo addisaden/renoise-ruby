@@ -18,7 +18,7 @@ require "readline"
 
 module Renoise
   class Repl
-    RESERVED = ["rm", "config", "notes", "ls", "play", "pause", "stop", "panic", "bpm"]
+    RESERVED = ["rm", "config", "notes", "ls", "play", "pause", "stop", "panic", "bpm", "help"]
     LS = /^\s*ls/i
     SEQUENCE = /^\s*([[:word:]]+)\s+(\d+)\s+(\d+)\s+(\d+)/i
     CONFIGURATION = /^\s*config\s+([[:word:]]+)\s+((\s*(\w+)\s+(\d+)){1,})/i
@@ -66,6 +66,20 @@ module Renoise
               @renoise.seq_stop
             elsif @input =~ /^panic/i then
               panic
+            elsif @input =~ /^help/i then
+              puts "- control -"
+              puts "play <- Play"
+              puts "pause <- Pause"
+              puts "stop <- Stop"
+              puts "panic <- Stops everything"
+              puts "bpm <number> <- Set Beats per Minute"
+              puts
+              puts "- sequencer -"
+              puts "<name> <basenote> <instrument> <track> <- create a sequence"
+              puts "ls <- Linst sequences"
+              puts "config <name> ...key val <- change configuration of sequence"
+              puts "notes <name> <midinotes...> <- set notes (negative for silence)"
+              puts "rm <seqname> <- Remove a sequence"
             elsif @input =~ RM then
               rm
             elsif @input =~ BPM then
