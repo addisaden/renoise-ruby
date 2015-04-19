@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Renoise::VERSION
   spec.authors       = ["Adrian Enns"]
   spec.email         = ["addis.aden@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{Renoise OSC Control for Ruby}
+  spec.description   = %q{Play with your code to make music in Ruby}
+  spec.homepage      = "https://github.com/addisaden/renoise-ruby/"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
